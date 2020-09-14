@@ -1,0 +1,6 @@
+[client]
+database = 'mydb'
+user = 'root'
+host = 'localhost'
+password = '1997wlgus'
+default-character-set = 'utf8'
