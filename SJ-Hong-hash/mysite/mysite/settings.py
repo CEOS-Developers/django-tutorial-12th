@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 # 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름
 INSTALLED_APPS = [
+    # 앱의 구성 클래스에 참조를 추가. PollsConfig가 존재하는 위치를 추가시킨다: polls.app.PollsConfigpython manage.py makemigrations polls
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
