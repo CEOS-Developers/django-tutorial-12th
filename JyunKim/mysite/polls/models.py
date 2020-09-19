@@ -18,7 +18,7 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-    # ForeignKey - c.question <-> q.choice_set.~
+    # ForeignKey - Choice.question <-> Question.choice_set.~
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
