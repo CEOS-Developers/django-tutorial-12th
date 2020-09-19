@@ -1,0 +1,15 @@
+<h1>{{ question.question_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<!-- post를 통해 클라이언트의 action이 서버에 변화를 준다: 새로운 정보를 생성 및 변경시키는 method -->
+<!-- 즉 question.id에 해당하는 정보를 생성 및 변경 -->
+<form action="{% url 'polls:vote' question.id %}" method="post">#
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+    # value:
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+{% endfor %}
+<input type="submit" value="Vote">
+</form>
