@@ -26,6 +26,7 @@ class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
 
+
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:
@@ -49,6 +50,7 @@ def vote(request, question_id):
         # 리다이렉션을 걸어둠
         # POST가 성공적으로 실행된다면, HttpResponse가 아닌 HttpResponseRedirect로 반환해야 한다. 이유는 위에 영어 주석
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
 
 """
 # Create your views here.
